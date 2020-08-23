@@ -241,6 +241,15 @@ echo $circleArea;
 
   <div class="form-item">内容</div>
   <!-- この下にtextareaタグを書いていきましょう -->
-  <textarea="body"></textarea>
+  <textarea name="body"></textarea>
 
 </form>
+
+<?php
+echo $_POST['name'];
+?>
+<div class="form-item">■ 内容</div>
+<!-- bodyを受け取りechoしましょう -->
+<?php
+echo $_POST['body'];
+?>
