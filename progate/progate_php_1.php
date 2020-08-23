@@ -233,3 +233,14 @@ echo $circleArea;
 <form action="sent.php" method="post">
 
 </form>
+
+<form method="post" action="sent.php">
+  <div class="form-item">名前</div>
+  <!-- この下にinputタグを書いていきましょう -->
+  <input type="text" name="name">
+
+  <div class="form-item">内容</div>
+  <!-- この下にtextareaタグを書いていきましょう -->
+  <textarea="body"></textarea>
+
+</form>
