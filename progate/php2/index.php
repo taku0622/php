@@ -16,11 +16,11 @@
     <div class="menu-items">
       <?php foreach ($menus as $menu) : ?>
         <div class="menu-item">
-          <!-- imageプロパティのゲッターを用いて以下を書き換えてください -->
           <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
-          <!-- nameプロパティのゲッターを用いて以下を書き換えてください -->
           <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
           <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
+          <!-- $menuのゲッターを用いてorderCountプロパティを表示してください -->
+          <p>注文数: <?php echo $menu->getOrderCount() ?></p>
         </div>
       <?php endforeach ?>
     </div>

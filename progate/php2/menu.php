@@ -1,10 +1,11 @@
 <?php
 class Menu
 {
-  // name, price, imageプロパティのアクセス権をprivateにしてください
   private $name;
   private $price;
   private $image;
+  // $orderCountというプロパティを定義してください。ただし、初期値を数値の0としてください。
+  private $orderCount = 0;
 
   public function __construct($name, $price, $image)
   {
@@ -18,16 +19,26 @@ class Menu
     echo '私は' . $this->name . 'です';
   }
 
-  // getNameメソッドを定義してください
   public function getName()
   {
     return $this->name;
   }
 
-  // getImageメソッドを定義してください
   public function getImage()
   {
     return $this->image;
+  }
+
+  // getOrderCountメソッドを定義してください
+  public function getOrderCount()
+  {
+    return $this->orderCount;
+  }
+
+  // setOrderCountメソッドを定義してください
+  public function setOrderCount($orderCount)
+  {
+    $this->orderCount = $orderCount;
   }
 
   public function getTaxIncludedPrice()
