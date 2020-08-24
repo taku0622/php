@@ -155,3 +155,24 @@ foreach ($menus as $menu) {
 echo '合計金額は' . $totalPrice . '円です';
 
 ?>
+
+<?php
+$menus = array(
+  array('name' => 'CURRY', 'price' => 900),
+  array('name' => 'PASTA', 'price' => 1200),
+  array('name' => 'COFFEE', 'price' => 600)
+);
+
+// この下にコードを書いてください
+$sum = 0;
+$max = $menus[0];
+for ($i = 0; $i < count($menus); $i++) {
+  echo "{$menus[$i]["name"]}は{$menus[$i]["price"]}円です" . "<br>";
+  $sum += $menus[$i]["price"];
+  if ($menus[$i]["price"] > $menus[0]["price"]) {
+    $max = $menus[$i];
+  }
+}
+echo "合計金額は{$sum}円です" . "<br>";
+echo $max['name'] . "が最高価格で" . $max['price'] . "円です";
+?>
