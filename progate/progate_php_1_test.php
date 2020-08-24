@@ -85,3 +85,25 @@ echo '<br>';
 echo "合計金額は{$sum}円です";
 
 ?>
+
+<?php
+$prices = array(1000, 650, 750, 800);
+$sum = 0;
+$max = 0;
+echo '$pricesの値: ';
+foreach ($prices as $price) {
+  echo $price . ' ';
+  $sum += $price;
+  if ($max < $price) {
+    $max = $price;
+  }
+}
+echo '<br>';
+echo '-----';
+echo '<br>';
+
+// この下にコードを書いてください
+echo "合計金額は{$sum}円です";
+echo '<br>';
+echo "最高価格は{$max}円です";
+?>
