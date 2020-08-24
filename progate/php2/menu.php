@@ -43,7 +43,6 @@ class Menu
     return floor($this->price * 1.08);
   }
 
-  // getTotalPriceメソッドを定義してください
   public function getTotalPrice()
   {
     return $this->getTaxIncludedPrice() * $this->orderCount;
