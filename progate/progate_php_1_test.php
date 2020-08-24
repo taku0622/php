@@ -68,3 +68,20 @@ for ($i = 1; $i < 101; $i++) {
   echo '<br>';
 }
 ?>
+
+<?php
+$prices = array(1000, 650, 750, 800);
+$sum = 0;
+echo '$pricesの値: ';
+foreach ($prices as $price) {
+  echo $price . ' ';
+  $sum += $price;
+}
+echo '<br>';
+echo '-----';
+echo '<br>';
+
+// この下にコードを書いてください
+echo "合計金額は{$sum}円です";
+
+?>
