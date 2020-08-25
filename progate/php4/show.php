@@ -40,18 +40,17 @@ $menuReviews = $menu->getReviews($reviews);
           <h4>レビュー一覧</h4>
         </div>
         <?php foreach ($menuReviews as $review) : ?>
-          <!-- $reviewに対して、引数を$usersとしてgetUserメソッドを呼び出して、戻り値を変数$userに代入してください -->
           <?php $user = $review->getUser($users) ?>
           <div class="review-list-item">
             <div class="review-user">
-              <!-- if文を用いて$userのgenderプロパティによって別の画像を表示してください -->
-              <?php if ($user->getGender() == "male") : ?>
+              <?php if ($user->getGender() == 'male') : ?>
                 <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/male.png" class='icon-user'>
               <?php else : ?>
                 <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/female.png" class='icon-user'>
-                <?php endif ?>>
-                <!-- <p>タグの中に、$userのゲッターを用いてnameプロパティを表示してください -->
-                <p><?php echo $user->getName() ?></p>
+              <?php endif ?>
+              <!-- <p>タグの中に、$userのゲッターを用いてidプロパティを表示してください -->
+              <p><?php echo $user->getId() ?></p>
+              <p><?php echo $user->getName() ?></p>
             </div>
             <p class="review-text"><?php echo $review->getBody() ?></p>
           </div>
