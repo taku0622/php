@@ -1,6 +1,10 @@
 <?php
-require_once('data.php');
 require_once('menu.php');
+require_once('data.php');
+
+$menuName = $_GET['name'];
+$menu = Menu::findByName($menus, $menuName);
+
 ?>
 
 <!DOCTYPE html>
@@ -8,40 +12,41 @@ require_once('menu.php');
 
 <head>
   <meta charset="utf-8">
-  <title>Café Progate</title>
+  <title>Progate</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <div class="menu-wrapper container">
-    <h1 class="logo">Café Progate</h1>
-    <h3>メニュー<?php echo Menu::getCount() ?>品</h3>
-    <form method="post" action="confirm.php">
-      <div class="menu-items">
-        <?php foreach ($menus as $menu) : ?>
-          <div class="menu-item">
-            <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
-            <h3 class="menu-item-name">
-              <a href="show.php?name=<?php echo $menu->getName() ?>">
-                <?php echo $menu->getName() ?>
-              </a>
-            </h3>
-            <?php if ($menu instanceof Drink) : ?>
-              <p class="menu-item-type"><?php echo $menu->getType() ?></p>
-            <?php else : ?>
-              <?php for ($i = 0; $i < $menu->getSpiciness(); $i++) : ?>
-                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class='icon-spiciness'>
-              <?php endfor ?>
-            <?php endif ?>
-            <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
-            <input type="text" value="0" name="<?php echo $menu->getName() ?>">
-            <span>個</span>
-          </div>
+  <div class="review-wrapper">
+    <div class="review-menu-item">
+      <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
+      <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+
+      <?php if ($menu instanceof Drink) : ?>
+        <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+      <?php else : ?>
+        <?php for ($i = 0; $i < $menu->getSpiciness(); $i++) : ?>
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class='icon-spiciness'>
+        <?php endfor ?>
+      <?php endif ?>
+      <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?></p>
+    </div>
+
+    <div class="review-list-wrapper">
+      <div class="review-list">
+        <div class="review-list-title">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
+          <h4>レビュー一覧</h4>
+        </div>
+        <!-- foreach文を書いてください -->
+        <?PHP foreach ($reviews as $review) : ?>
+          <h3><?php echo $review->getMenuName() ?></h3>
+          <p><?php echo $review->getBody() ?></p>
         <?php endforeach ?>
       </div>
-      <input type="submit" value="注文する">
-    </form>
+    </div>
+    <a href="index.php">← メニュー一覧へ</a>
   </div>
 </body>
 
