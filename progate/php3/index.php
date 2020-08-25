@@ -1,8 +1,6 @@
 <?php
 require_once('data.php');
-// menu.phpを読み込んでください
 require_once('menu.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +16,8 @@ require_once('menu.php');
 <body>
   <div class="menu-wrapper container">
     <h1 class="logo">Café Progate</h1>
-    <!-- Menuクラスのクラスプロパティ$countを表示してください -->
-    <h3>メニュー<?php echo Menu::$count ?>品</h3>
+    <!-- Menuクラスに対してgetCountメソッドを呼び出して、クラスプロパティ$countを表示してください -->
+    <h3>メニュー<?php echo Menu::getCount() ?>品</h3>
     <form method="post" action="confirm.php">
       <div class="menu-items">
         <?php foreach ($menus as $menu) : ?>
