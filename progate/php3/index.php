@@ -25,9 +25,11 @@ require_once('menu.php');
             <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
             <?php if ($menu instanceof Drink) : ?>
               <p class="menu-item-type"><?php echo $menu->getType() ?></p>
-              <!-- elseを追加してください -->
             <?php else : ?>
-              <p>辛さ: <?php echo $menu->getSpiciness() ?></p>
+              <!-- for文を用いて、spicinessプロパティの数だけ繰り返し処理を行ってください -->
+              <?php for ($s = 0; $s < $menu->getSpiciness(); $s++) : ?>
+                <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" class="icon-spiciness">
+              <?php endfor ?>
             <?php endif ?>
             <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
             <input type="text" value="0" name="<?php echo $menu->getName() ?>">
