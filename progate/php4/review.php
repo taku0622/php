@@ -2,18 +2,16 @@
 class Review
 {
   private $menuName;
-  // $userNameというprivateなプロパティを定義してください
-  private $userName;
-
+  // $userNameを$userIdに書き換えてください
+  private $userId;
   private $body;
 
-  // 2つ目の引数として$userNameを追加してください
-  public function __construct($menuName, $userName, $body)
+  // 引数の$userNameを$userIdに書き換えてください
+  public function __construct($menuName, $userId, $body)
   {
     $this->menuName = $menuName;
-    // userNameプロパティに$userNameを代入してください
-    $this->userName = $userName;
-
+    // userNameをuserIdに書き換えてください
+    $this->userId = $userId;
     $this->body = $body;
   }
 
@@ -27,11 +25,11 @@ class Review
     return $this->body;
   }
 
-  // getUserメソッドを定義してください
   public function getUser($users)
   {
     foreach ($users as $user) {
-      if ($user->getName() == $this->userName) {
+      // $userのidプロパティと、インスタンス自身のuserIdプロパティを比べるように書き換えてください
+      if ($user->getId() == $this->userId) {
         return $user;
       }
     }
