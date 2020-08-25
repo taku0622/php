@@ -23,8 +23,10 @@ require_once('menu.php');
           <div class="menu-item">
             <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
             <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
-            <!-- $menuのゲッターを用いてtypeプロパティを表示してください -->
-            <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+            <!-- if文を用いて、$menuがDrinkクラスのインスタンスである時だけgetTypeメソッドを呼び出すようにしてください -->
+            <?php if ($menu instanceof Drink) : ?>
+              <p class="menu-item-type"><?php echo $menu->getType() ?></p>
+            <?php endif; ?>
             <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
             <input type="text" value="0" name="<?php echo $menu->getName() ?>">
             <span>個</span>
