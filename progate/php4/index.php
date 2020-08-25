@@ -23,8 +23,8 @@ require_once('menu.php');
           <div class="menu-item">
             <img src="<?php echo $menu->getImage() ?>" class="menu-item-image">
             <h3 class="menu-item-name">
-              <!-- 以下の1行をaタグで囲んでください -->
-              <a href="show.php">
+              <!-- nameのクエリ情報を追加してください -->
+              <a href="show.php?name=<?php echo $menu->getName() ?>">
                 <?php echo $menu->getName() ?>
               </a>
             </h3>
