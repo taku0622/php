@@ -1,12 +1,12 @@
 <?php
 # 入力部
 // fscanf(STDIN, "%d", $a);
-// fscanf(STDIN, "%d %d %d", $n, $x, $t);
-$s = fgets(STDIN);
+fscanf(STDIN, "%d %d", $a, $b);
+// $s = fgets(STDIN);
 // fscanf(STDIN, "%d", $n);
 
 # 処理部
-$arr = explode(" ", $s);
+// $arr = explode(" ", $s);
 // for ($i = 0; $n > $x * $i; $i++) {
 // }
 // if (strpos($s, 'RRR') !== false) {
@@ -28,12 +28,12 @@ $arr = explode(" ", $s);
 // if (ctype_upper($a)) {
 //   $c = "A";
 // }
-for ($i = 0; $i < count($arr); $i++) {
-  if ($i + 1 != $arr[$i]) {
-    $r = $i + 1;
-  }
-}
+// for ($i = 0; $i < count($arr); $i++) {
+//   if ($i + 1 != $arr[$i]) {
+//     $r = $i + 1;
+//   }
+// }
 
 # 出力部
-echo $r . "\n";
+echo $a * $b . "\n";
 // echo ($i * 1000) - $n . "\n";
