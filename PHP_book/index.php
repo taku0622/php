@@ -30,6 +30,9 @@ print("\n");
 print('I\'m stadying');
 print("\n");
 print(60 * 60 * 24 . "\n");
+print("現在は" . date("G時 i分 s秒") . "です\n");
+print("今日は" . date("Y年 n月 j日") . "です\n");
+
 ?>
 </pre>
   </main>
