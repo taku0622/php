@@ -27,3 +27,14 @@ $sum = 100 + 1050 + 200;
 //   print($i . "\n");
 //   $i -= 2;
 // }
+for ($i = 1; $i <= 365; $i++) {
+  $day = date('n/j(D)', strtotime('+' . $i . 'day'));
+  print($day . "\n");
+}
+$i = 1;
+while ($i <= 365) {
+  $timestamp = strtotime("+" . $i . "day");
+  $day = date("n/j(D)", $timestamp);
+  print($day . "\n");
+  $i++;
+}
