@@ -62,3 +62,12 @@ $os = [
 foreach ($os as $key => $value) {
   print($key . " :=> " . $value . "\n");
 }
+if (date("G") < 9) {
+  print("※ 現在受付時間外です\n");
+} else {
+  print("ようこそ\n");
+}
+$answer = 0;
+if ($answer == 0) {
+  print("1以上の数字を指定してください\n");
+}
