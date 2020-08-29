@@ -89,3 +89,9 @@ if ($success) {
 } else {
   print('書き込みに失敗しました。フォルダの権限などを確認してください');
 }
+echo "\n";
+$news = file_get_contents('./news_data/news.txt');
+$news .= "<br/>2018-06-2-02 ニュースを追加しました";
+file_put_contents('./news_data/news.txt', $news);
+
+readfile('./news_data/news.txt');
