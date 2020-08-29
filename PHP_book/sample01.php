@@ -95,3 +95,9 @@ $news .= "<br/>2018-06-2-02 ニュースを追加しました";
 file_put_contents('./news_data/news.txt', $news);
 
 readfile('./news_data/news.txt');
+echo "\n";
+$xmlTree = simplexml_load_file("https://h2o-space.com/feed");
+foreach ($xmlTree->channel->item as $item) :
+?>
+  ・<a href="<?php print($item->link); ?>"><?php print($item->title); ?></a>
+<?php endforeach;
