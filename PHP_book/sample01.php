@@ -42,3 +42,23 @@ $week_name = ["日", "月", "火", "水", "木", "金", "土"];
 print("今日は" . $week_name[date("w")] . "曜日です\n");
 $ages = ["10代以下", "20代", "30代", "40代", "50代", "60台以上"];
 print($ages[1] . "\n");
+$fruits = [
+  "apple " => "りんご",
+  "grape " => "ぶどう",
+  "lemon " => "レモン",
+  "tomato" => "トマト",
+  "peach " => "もも"
+];
+foreach ($fruits as $english => $japanese) {
+  print($english . " : " . $japanese . "\n");
+}
+$os = [
+  "win"     => "Windows",
+  "mac"     => "Macintosh",
+  "iphone"  => "iPhone",
+  "ipad"    => "iPad",
+  "android" => "Android"
+];
+foreach ($os as $key => $value) {
+  print($key . " :=> " . $value . "\n");
+}
