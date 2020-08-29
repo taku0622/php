@@ -83,3 +83,9 @@ if ($answer == 0) {
 <?php
 $date = sprintf("%04d年 %02d月 %02d日", 2018, 1, 2);
 print($date);
+$success = file_put_contents('./news_data/news.txt', '2018-06-01 ホームページをリニューアルしました');
+if ($success) {
+  print('ファイルへの書き込みが完了しました。');
+} else {
+  print('書き込みに失敗しました。フォルダの権限などを確認してください');
+}
