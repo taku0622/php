@@ -79,4 +79,7 @@ if ($answer == 0) {
 
 切り上げ (ceil)→<?php print(ceil(100 / 3000 * 100)); ?>
 
-四捨五入 (round)→<?php print(round(100 / 3000 * 100, 1)); ?>
+四捨五入 (round)→<?php print(round(100 / 3000 * 100, 1) . "\n"); ?>
+<?php
+$date = sprintf("%04d年 %02d月 %02d日", 2018, 1, 2);
+print($date);
