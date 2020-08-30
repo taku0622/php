@@ -126,3 +126,13 @@ foreach ($json->items as $item) :
   <input type="checkbox" name="reserve[]" value="1/3"> 1月 3日<br>
 </p>
 <input type="submit" value="送信する">
+<?php
+$age = "３４23";
+
+$age = mb_convert_kana($age, "n", "UTF-8");
+if (is_numeric($age)) {
+  print($age . "歳");
+} else {
+  print("※　年齢が数字ではありません");
+}
+?>
