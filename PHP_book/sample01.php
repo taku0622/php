@@ -135,4 +135,13 @@ if (is_numeric($age)) {
 } else {
   print("※　年齢が数字ではありません");
 }
-?>
+echo "\n";
+$zip = "234-6453";
+
+$zip = mb_convert_kana($zip, "a", "UTF-8");
+if (preg_match("/\A\d{3}[-]\d{4}\z/", $zip)) {
+  print("郵便番号： 〒" . $zip);
+} else {
+  print("※ 郵便番号を 123-456の形式でご記入下さい");
+}
+echo "\n";
