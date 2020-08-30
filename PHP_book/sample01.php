@@ -114,3 +114,7 @@ foreach ($json->items as $item) :
   <input type="text" id="my_name" maxlength="255" value="">
   <input type="submit" value="送信する">
 </form>
+<form action="submit.php" method="post">
+  <p>性別：<input type="radio" name="gender" value="male"> 男性 ／ <input type="radio" name="gender" value="female"> 女性</p>
+  <input type="submit" value="送信する">
+</form>
