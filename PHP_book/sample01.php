@@ -1,4 +1,7 @@
 <?php
+header('Location: https://h2o-space.com/');
+exit();
+
 print("PHPを勉強中です!\n");
 print('takumi');
 print("現在は" . date("G-i-s") . "\n");
