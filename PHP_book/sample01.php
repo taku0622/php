@@ -174,3 +174,4 @@ if ($success) {
 echo "\n";
 $lucky = rand(1, 12);
 echo $lucky . "月生まれはラッキーです★";
+echo "done 3-28";
