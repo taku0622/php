@@ -1,4 +1,6 @@
 <?php
+// session_start();
+// $_SESSION["session_message"] = "値をセッションに保存しました";
 // $value = "変数に保存した値です";
 // setcookie("save_message", "Cookieに保存した値です", time() + 60 * 60 * 24 * 14);
 // header('Location: https://h2o-space.com/');
