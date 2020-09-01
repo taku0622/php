@@ -158,3 +158,16 @@ for ($i = 2; $d < 31; $i++) {
   print("9/" . $d . " (" . $week[$i % 7] . ")\n");
   $d++;
 }
+$email = "hayatsutkm@gmail.com";
+mb_language(('japanese'));
+mb_internal_encoding("UTF=8");
+
+$from = "noreply@example.com";
+$sub = "phpの教科書";
+$body = "このメールはサンプルよ";
+$success = mb_send_mail($email, $sub, $body, "from: " . $from);
+if ($success) {
+  echo "送信できた";
+} else {
+  echo "送信できませんでした";
+}
