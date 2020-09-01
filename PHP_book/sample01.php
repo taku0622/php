@@ -173,4 +173,4 @@ if ($success) {
 }
 echo "\n";
 $lucky = rand(1, 12);
-echo $lucky . "月生まれはラッキーです";
+echo $lucky . "月生まれはラッキーです★";
