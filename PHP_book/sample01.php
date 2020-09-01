@@ -1,6 +1,6 @@
 <?php
-header('Location: https://h2o-space.com/');
-exit();
+// header('Location: https://h2o-space.com/');
+// exit();
 
 print("PHPを勉強中です!\n");
 print('takumi');
@@ -148,3 +148,9 @@ if (preg_match("/\A\d{3}[-]\d{4}\z/", $zip)) {
   print("※ 郵便番号を 123-456の形式でご記入下さい");
 }
 echo "\n";
+$week = array("sun", "mon", "tue", "wed", "thu", "fri", "sat");
+$d = 1;
+for ($i = 2; $d < 31; $i++) {
+  print("9/" . $d . " (" . $week[$i % 7] . ")\n");
+  $d++;
+}
