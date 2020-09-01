@@ -171,3 +171,6 @@ if ($success) {
 } else {
   echo "送信できませんでした";
 }
+echo "\n";
+$lucky = rand(1, 12);
+echo $lucky . "月生まれはラッキーです";
