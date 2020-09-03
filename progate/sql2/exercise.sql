@@ -17,3 +17,9 @@ FROM purchases;
 
 SELECT name, price, price * 1.08
 FROM purchases;
+
+-- character_nameが「にんじゃわんこ」であるpriceカラムのデータの合計を取得してください
+
+SELECT SUM(price)
+FROM purchases
+WHERE character_name = "にんじゃわんこ";
