@@ -68,3 +68,15 @@ FROM purchases;
 SELECT MAX(price)
 FROM purchases
 WHERE character_name = "にんじゃわんこ";
+
+-- purchased_atごとの合計金額を取得してください
+
+SELECT SUM(price), purchased_at
+FROM purchases
+GROUP BY purchased_at;
+
+-- purchased_atごとのお金を使った数を取得してください
+
+SELECT COUNT(price), purchased_at
+FROM purchases
+GROUP BY purchased_at;
