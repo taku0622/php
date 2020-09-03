@@ -35,3 +35,19 @@ SELECT AVG(price)
 FROM purchases
 WHERE character_name = "にんじゃわんこ"
 ;
+
+-- purchasesテーブルのnameカラムのデータの数を取得してください
+
+SELECT COUNT(name)
+FROM purchases;
+
+-- purchasesテーブルのデータの数を取得してください
+
+SELECT COUNT(*)
+FROM purchases;
+
+-- character_nameが「にんじゃわんこ」であるデータの数を取得してください
+
+SELECT COUNT(*)
+FROM purchases
+WHERE character_name="にんじゃわんこ";
