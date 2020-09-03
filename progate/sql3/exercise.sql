@@ -51,3 +51,14 @@ FROM players
   JOIN countries
   --結合条件を追加してください
   ON players.country_id = countries.id;
+
+SELECT players.name, countries.name
+FROM players
+  JOIN countries
+  ON players.country_id = countries.id;
+
+SELECT countries.name, SUM(goals)
+FROM players
+  JOIN countries
+  ON players.country_id = countries.id
+GROUP BY countries.name;
