@@ -82,3 +82,10 @@ SELECT players.name AS "選手名", teams.name AS "前年所属していたチ�
 FROM players
   LEFT JOIN teams
   ON players.previous_team_id = teams.id;
+
+SELECT *
+FROM players
+  JOIN countries
+  ON players.country_id = countries.id
+  LEFT JOIN teams
+  ON players.previous_team_id = teams.id;
