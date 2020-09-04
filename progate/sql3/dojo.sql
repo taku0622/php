@@ -91,3 +91,17 @@ SELECT SUM(price) AS "総売上", SUM(price - cost) AS "総利益"
 FROM items
   JOIN sales_records
   ON items.id = sales_records.item_id
+
+-- 日ごとの販売個数とその日付を取得してください
+SELECT purchased_at, COUNT(purchased_at) AS "販売個数"
+FROM sales_records
+GROUP BY purchased_at
+ORDER BY purchased_at ASC;
+
+-- 日ごとの売上額とその日付を取得してください
+SELECT sales_records.purchased_at, SUM(items.price) AS "売上額"
+FROM sales_records
+  JOIN items
+  ON items.id = sales_records.item_id
+GROUP BY sales_records.purchased_at
+ORDER BY sales_records.purchased_at ASC;
