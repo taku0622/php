@@ -26,3 +26,17 @@ ORDER BY price DESC;
 SELECT *
 FROM items
 WHERE name LIKE "%シャツ%";
+
+-- 全商品の名前、値段、利益を取得してください
+SELECT name, price, price - cost
+FROM items;
+
+-- 全商品の利益の平均を取得してください
+SELECT AVG(price - cost)
+FROM items;
+
+-- 各商品あたりの利益が上位5件の商品の名前と利益を取得してください
+SELECT name, price-cost
+FROM items
+ORDER BY price-cost DESC
+LIMIT 5;
