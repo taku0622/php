@@ -105,3 +105,21 @@ FROM sales_records
   ON items.id = sales_records.item_id
 GROUP BY sales_records.purchased_at
 ORDER BY sales_records.purchased_at ASC;
+
+-- 10個以上購入したユーザーIDとユーザー名、購入した商品の数を取得してください
+SELECT users.id, users.name, COUNT(sales_records.user_id) AS "購入数"
+FROM sales_records
+  JOIN users
+  ON sales_records.user_id = users.id
+GROUP BY sales_records.user_id
+HAVING COUNT(sales_records.user_id) >= 10
+
+-- 「サンダル」を購入したユーザーのidと名前を取得してください
+SELECT users.id, users.name
+FROM sales_records
+  JOIN users
+  ON sales_records.user_id = users.id
+  JOIN items
+  ON sales_records.item_id = items.id
+WHERE items.name = "サンダル"
+GROUP BY sales_records.user_id
