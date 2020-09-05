@@ -152,3 +152,40 @@ FROM my_items;
 
 SELECT AVG(price)
 FROM my_items;
+
+-- c18
+INSERT INTO makers
+SET name
+="山田さん", address="東京都港区", tel="000-111-2222";
+INSERT INTO makers
+SET name
+="齊藤さん", address="北海道小樽市", tel="111-222-3333";
+INSERT INTO makers
+SET name
+="川上さん", address="神奈川県横浜市", tel="222-333-4444";
+
+UPDATE my_items SET maker_id=1 WHERE id=1 OR id = 3;
+
+UPDATE my_items SET maker_id=2 WHERE id=2;
+
+UPDATE my_items SET maker_id=3 WHERE id=4;
+
+SELECT maker_id
+FROM my_items
+WHERE id=1;
+SELECT *
+FROM makers
+WHERE id=1;
+
+SELECT *
+FROM makers, my_items
+WHERE my_items.id=1 AND makers.id = my_items.maker_id;
+
+SELECT *
+FROM makers, my_items
+WHERE makers.id = my_items.maker_id;
+
+-- テーブル名の省略
+SELECT *
+FROM makers m, my_items i
+WHERE i.id=1 AND m.id = i.maker_id;
