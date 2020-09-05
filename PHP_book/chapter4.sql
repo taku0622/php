@@ -129,3 +129,12 @@ WHERE id = 3;
 
 UPDATE my_items SET sales = 8
 WHERE id = 4;
+
+-- c16
+UPDATE my_items SET created="2018-01-01";
+
+UPDATE my_items SET created=now() WHERE id=2;
+
+UPDATE my_items SET created=now() WHERE id=4
+
+-- c17
