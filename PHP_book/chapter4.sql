@@ -11,3 +11,7 @@ CREATE TABLE my_items
   item_name TEXT,
   price INT
 );
+
+INSERT INTO my_items
+SET id
+=1, item_name="いちご", price=200;
