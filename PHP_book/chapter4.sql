@@ -100,3 +100,32 @@ WHERE id=1 OR id=3;
 SELECT *
 FROM my_items
 WHERE (id=1 OR id=3) AND price<150 AND keyword LIKE "%甘い%";
+
+-- c15
+SELECT *
+FROM my_items;
+
+SELECT *
+FROM my_items
+ORDER BY id ASC;
+
+SELECT *
+FROM my_items
+ORDER BY id DESC;
+
+SELECT *
+FROM my_items
+WHERE price<= 180
+ORDER BY price;
+
+UPDATE my_items SET sales = 20
+WHERE id = 1;
+
+UPDATE my_items SET sales = 20
+WHERE id = 2;
+
+UPDATE my_items SET sales = 16
+WHERE id = 3;
+
+UPDATE my_items SET sales = 8
+WHERE id = 4;
