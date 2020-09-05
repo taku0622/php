@@ -24,3 +24,11 @@ DELETE FROM my_items WHERE id=1;
 INSERT INTO my_items
 SET id
 =1, item_name="いちご", price=180;
+
+SELECT id, item_name
+FROM my_items
+WHERE id=1;
+
+SELECT *
+FROM my_items
+WHERE id=1;
