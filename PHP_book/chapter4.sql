@@ -18,3 +18,9 @@ SET id
 
 UPDATE my_items SET price=180
 WHERE id=1;
+
+DELETE FROM my_items WHERE id=1;
+
+INSERT INTO my_items
+SET id
+=1, item_name="いちご", price=180;
