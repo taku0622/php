@@ -51,3 +51,52 @@ SET item_name
 
 UPDATE my_items SET price=200
 WHERE item_name="ブルーベリー";
+
+-- c14
+SELECT *
+FROM my_items
+WHERE price=180;
+
+SELECT *
+FROM my_items
+WHERE item_name = "いちご";
+
+SELECT *
+FROM my_items
+WHERE price < 180;
+
+SELECT *
+FROM my_items
+WHERE price<180;
+
+SELECT *
+FROM my_items
+WHERE price<=180;
+
+SELECT *
+FROM my_items
+WHERE price>=180;
+
+SELECT *
+FROM my_items
+WHERE id<>1;
+
+SELECT *
+FROM my_items
+WHERE keyword LIKE "%甘い%";
+
+SELECT *
+FROM my_items
+WHERE keyword LIKE "赤い%";
+
+SELECT *
+FROM my_items
+WHERE price>=50 AND price<150;
+
+SELECT *
+FROM my_items
+WHERE id=1 OR id=3;
+
+SELECT *
+FROM my_items
+WHERE (id=1 OR id=3) AND price<150 AND keyword LIKE "%甘い%";
