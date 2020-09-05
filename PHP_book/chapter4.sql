@@ -189,3 +189,39 @@ WHERE makers.id = my_items.maker_id;
 SELECT *
 FROM makers m, my_items i
 WHERE i.id=1 AND m.id = i.maker_id;
+
+-- c19
+INSERT INTO carts
+SET item_id
+=1,count=5;
+INSERT INTO carts
+SET item_id
+=2,count=3;
+INSERT INTO carts
+SET item_id
+=3,count=1;
+INSERT INTO carts
+SET item_id
+=1,count=3;
+INSERT INTO carts
+SET item_id
+=3,count=2;
+INSERT INTO carts
+SET item_id
+=1,count=2;
+
+SELECT my_items.item_name, carts.count
+FROM my_items, carts
+WHERE my_items.id = carts.item_id;
+
+SELECT SUM(count)
+FROM carts;
+
+SELECT item_id, SUM(count)
+FROM carts
+GROUP BY item_id;
+
+SELECT i.item_name, SUM(c.count)
+FROM my_items i, carts c
+WHERE i.id = c.item_id
+GROUP BY c.item_id;
