@@ -225,3 +225,14 @@ SELECT i.item_name, SUM(c.count)
 FROM my_items i, carts c
 WHERE i.id = c.item_id
 GROUP BY c.item_id;
+
+-- 20
+SELECT i.item_name, SUM(count)
+FROM my_items i LEFT JOIN carts c ON i.id=c.item_id
+GROUP BY i.id;
+
+SELECT my_items.item_name, COUNT(carts.item_id), SUM(carts.count)
+FROM my_items
+  LEFT JOIN carts
+  ON my_items.id = carts.item_id
+GROUP BY my_items.id
