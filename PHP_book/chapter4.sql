@@ -138,3 +138,17 @@ UPDATE my_items SET created=now() WHERE id=2;
 UPDATE my_items SET created=now() WHERE id=4
 
 -- c17
+SELECT SUM(price)
+FROM my_items;
+
+SELECT MAX(price)
+FROM my_items;
+
+SELECT MIN(price)
+FROM my_items;
+
+SELECT COUNT(id)
+FROM my_items;
+
+SELECT AVG(price)
+FROM my_items;
