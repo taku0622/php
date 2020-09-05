@@ -15,3 +15,6 @@ CREATE TABLE my_items
 INSERT INTO my_items
 SET id
 =1, item_name="いちご", price=200;
+
+UPDATE my_items SET price=180
+WHERE id=1;
