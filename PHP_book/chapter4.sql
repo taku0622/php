@@ -236,3 +236,51 @@ FROM my_items
   LEFT JOIN carts
   ON my_items.id = carts.item_id
 GROUP BY my_items.id
+
+-- 21
+SELECT item_id
+FROM carts;
+SELECT DISTINCT(item_id)
+FROM carts;
+
+SELECT *
+FROM my_items
+WHERE price>=50
+  AND price<150;
+SELECT *
+FROM my_items
+WHERE price BETWEEN 50 AND 149;
+
+SELECT *
+FROM my_items
+WHERE id=1 OR id=3;
+SELECT *
+FROM my_items
+WHERE id IN (1,3);
+
+SELECT *
+FROM carts
+LIMIT
+2;
+
+SELECT *
+FROM carts
+LIMIT
+1,2;
+
+SELECT i.item_name, SUM(c.count)
+FROM my_items i, carts c
+WHERE i.id = c.item_id
+GROUP BY c.item_id;
+SELECT i.item_name, SUM(c.count) AS sales_count
+FROM my_items i, carts c
+WHERE i.id = c.item_id
+GROUP BY c.item_id;
+
+SELECT m.name, i.item_name, SUM(c.count) AS sales_count
+FROM makers m, my_items i
+  LEFT JOIN carts c
+  ON i.id=c.item_id
+WHERE m.id=i.maker_id
+GROUP BY c.item_id
+ORDER BY sales_count DESC;
